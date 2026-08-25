@@ -1,5 +1,5 @@
 <?php
-$env = parse_ini_file(__DIR__ . '\..\.env');
+$env = parse_ini_file(__DIR__ . '/../.env');
 // Данные для Beget берутся из панели: «Базы данных» → имя/логин/пароль
 define('DB_HOST', $env['DB_HOST']);
 define('DB_NAME', $env['DB_NAME']);   // на Beget: логин_имяБД
