@@ -13,6 +13,7 @@
     <a class="navbar-brand" href="/"><?=SITE_NAME?></a>
     <div class="ms-auto">
         <a href="/admin/" class="btn btn-outline-light btn-sm">Админ-панель</a>
+        <?= isset($_SESSION["user"]) ? '<a href="/admin/logout.php" class="btn btn-outline-light btn-sm">Выйти</a>' : ""?>
     </div>
   </div>
 </nav>

@@ -25,18 +25,17 @@ require __DIR__ . '/../includes/header.php';
         <td><?=number_format($p['price'],0,',',' ')?> ₽</td>
         <td><?=$p['stock']?></td>
         <td>
-          <a href="edit.php?id=<?=$p['id']?>" class="btn btn-sm btn-primary">Ред.</a>
+          <a href="edit.php?id=<?=$p['id']?>" class="btn btn-sm btn-primary">Изменить</a>
           <form method="post" action="delete.php" class="d-inline"
                 onsubmit="return confirm('Удалить?')">
             <input type="hidden" name="csrf" value="<?=csrf_token()?>">
             <input type="hidden" name="id" value="<?=$p['id']?>">
-            <button class="btn btn-sm btn-danger">✕</button>
+            <button class="btn btn-sm btn-danger">Удалить</button>
           </form>
         </td>
       </tr>
     <?php endforeach; ?>
     </tbody>
   </table>
-  <a href="/admin/logout.php" class="btn btn-secondary">Выйти</a>
 </div>
 <?php require __DIR__ . '/../includes/footer.php'; ?>

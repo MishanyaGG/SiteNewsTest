@@ -10,7 +10,7 @@ if(!$p){ http_response_code(404); die('Товар не найден'); }
 require __DIR__ . '/includes/header.php';
 ?>
 <div class="container py-4">
-  <a href="/" class="btn btn-link">← В каталог</a>
+  <a href="/" class="btn btn-secondary" style="margin-bottom: 10px;">← В каталог</a>
   <div class="row">
     <div class="col-md-5">
       <img src="/uploads/<?=e($p['image'] ?: 'noimage.png')?>" class="img-fluid rounded">
