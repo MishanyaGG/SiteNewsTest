@@ -1,6 +1,6 @@
 <?php
-require __DIR__ . '../includes/db.php';
-require __DIR__ . '../includes/functions.php';
+require __DIR__ . '/includes/db.php';
+require __DIR__ . '/includes/functions.php';
 $id = (int)($_GET['id'] ?? 0);
 $stmt = $pdo->prepare("SELECT p.*, c.name AS cat_name FROM products p
                        JOIN categories c ON c.id=p.category_id WHERE p.id=?");
