@@ -8,10 +8,16 @@ $products = $pdo->query("SELECT p.*, c.name AS cat_name FROM products p
 require __DIR__ . '/../includes/header.php';
 ?>
 <div class="container py-4">
-  <div class="d-flex justify-content-between mb-3">
+
+  <div class="d-flex justify-content-between align-items-center mb-3">
     <h2>Товары</h2>
-    <a href="add.php" class="btn btn-success">+ Добавить товар</a>
+    <a href="edit.php" class="btn btn-success">+ Добавить товар</a>
   </div>
+  <!-- Локальная навигация админки -->
+  <ul class="nav nav-tabs mb-3">
+    <li class="nav-item"><a class="nav-link" href="/admin/">Товары</a></li>
+    <li class="nav-item"><a class="nav-link active" href="/admin/categories.php">Категории</a></li>
+  </ul>
   <table class="table table-striped">
     <thead><tr><th>ID</th><th>Фото</th><th>Название</th><th>Категория</th>
     <th>Цена</th><th>Остаток</th><th></th></tr></thead>
@@ -25,12 +31,12 @@ require __DIR__ . '/../includes/header.php';
         <td><?=number_format($p['price'],0,',',' ')?> ₽</td>
         <td><?=$p['stock']?></td>
         <td>
-          <a href="edit.php?id=<?=$p['id']?>" class="btn btn-sm btn-primary">Изменить</a>
+          <a href="edit.php?id=<?=$p['id']?>" class="btn btn-sm btn-primary">Ред.</a>
           <form method="post" action="delete.php" class="d-inline"
                 onsubmit="return confirm('Удалить?')">
             <input type="hidden" name="csrf" value="<?=csrf_token()?>">
             <input type="hidden" name="id" value="<?=$p['id']?>">
-            <button class="btn btn-sm btn-danger">Удалить</button>
+            <button class="btn btn-sm btn-danger">✕</button>
           </form>
         </td>
       </tr>
