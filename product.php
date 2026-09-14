@@ -16,11 +16,11 @@ require __DIR__ . '/includes/header.php';
       <img src="/uploads/<?=e($p['image'] ?: 'noimage.png')?>" class="img-fluid rounded">
     </div>
     <div class="col-md-7">
-      <h1><?=e($p['name'])?></h1>
-      <p class="text-muted">Категория: <?=e($p['cat_name'])?></p>
-      <h3 class="text-primary"><?=number_format($p['price'],0,',',' ')?>&nbsp;₽</h3>
-      <p><?=nl2br(e($p['description']))?></p>
-      <p>В наличии: <b><?=$p['stock']?></b> шт.</p>
+      <h1 name="name_product"><?=e($p['name'])?></h1>
+      <p name="name_category" class="text-muted">Категория: <?=e($p['cat_name'])?></p>
+      <h3 name="price" class="text-primary"><?=number_format($p['price'],0,',',' ')?>&nbsp;₽</h3>
+      <p name="description"><?=nl2br(e($p['description']))?></p>
+      <p name="stock">В наличии: <b><?=$p['stock']?></b> шт.</p>
     </div>
   </div>
 </div>
