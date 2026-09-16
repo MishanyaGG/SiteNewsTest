@@ -68,7 +68,7 @@ require __DIR__ . '/../includes/header.php';
                   onsubmit="return confirm('Удалить категорию <?=e($c['name'])?>')">
               <input type="hidden" name="csrf" value="<?=csrf_token()?>">
               <input type="hidden" name="id" value="<?=$c['id']?>">
-              <button class="btn btn-sm btn-danger">✕</button>
+              <button class="btn btn-sm btn-danger">Удалить</button>
             </form>
           </td>
         </tr>
